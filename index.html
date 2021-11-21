@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="utf-8">
+    <title>Match Made in Skyrim</title>
+    <link rel="icon" href="Icons/Soulgem-g.png" />
+    <meta name="Match Made in Skyrim" content="Skyrim match-three type of game" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src='app.js' charset='utf-8'></script>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='menu'>
+            <div class='title'>
+                <h1>Match Made in Skyrim</h1>
+            </div>
+            <div class='btn-section'>
+                <button class='start-btn' id='startFreeBtn'>
+                    START&nbsp; &nbsp;FREE&nbsp;&nbsp; MODE
+                </button>
+                <div class="tooltip">
+                    <i class="material-icons" style="font-size:14px;">help</i>
+                    <span class="tooltiptext">Play without any time limits...Ulfrickin' day if you'd like.</span>
+                </div>
+            </div>
+            <div class='btn-section'>
+                <button class='start-btn' id='startTimerBtn'>
+                    START TIMER MODE
+                </button>
+                <div class="tooltip">
+                    <i class="material-icons" style="font-size:14px;">help</i>
+                    <span class="tooltiptext">What is the highest score you can summon in 60 seconds?</span>
+                </div>
+            </div>
+            <div class='btn-section'>
+                <button class='end-timer-btn' id='EndTimerBtn'>
+                    End Timer Mode
+                </button>
+            </div>
+            <div class='sound-control'>
+                <p>Sound</p>
+                <label class="switch" title='Toggle Sound'>
+                    <input id='sound-toggle' type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class='timer-display' id='timer-display'>
+                TIME LEFT:
+                <span class='score'>
+                    <em id='timeLeft'></em>
+                </span>
+            </div>
+            <div class='score-board'>
+                PLAYER's SCORE:
+                <span id='score' class='score'>
+                    0
+                </span>
+            </div>
+            <div class='score-board'>
+                HIGHEST TIMER SCORE:
+                <span id='highestTimedScore' class='score'>
+                    0
+                </span>
+            </div>
+            <div class='score-board'>
+                HIGHEST FREE SCORE:
+                <span id='highestFreeScore' class='score'>
+
+                </span>
+            </div>
+            <div>
+                <button id='shuffleBtn' class='additional-btn'>
+                    Shuffle Board
+                </button>
+            </div>
+        </div>
+
+        <div class='grid'>
+        </div>
+
+        <div>
+            <div class='help-btn'>
+                <span>
+                    How to Play?
+                </span>
+                <div id="helpText" class='help-text'>Swap two adjacent icons to form a line or a row of 3 or more icons
+                    of
+                    the same kind to earn points.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

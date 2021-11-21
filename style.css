@@ -1,0 +1,287 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+
+
+body {
+    background-image: url('Icons/Skyrim-bckgrnd.jpg');
+    background-size: cover;
+    background-color:rgb(91, 106, 107);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 0.6fr 1.5fr 0.4fr;
+    justify-items: left;
+    align-items: top;
+}
+.menu {
+    width:25vw;
+    min-width: 25vw;
+    align-items: center;
+}
+.title {
+    font-family: 'IM Fell English SC', serif;
+    color:rgb(25, 32, 32);
+    font-size: 3rem;
+    text-align: center;
+    align-items: top;
+}
+.title h1 {
+    margin-block-start: 0.2em;
+    font-size: 3rem;
+}
+.grid {
+    height: 840px;
+    width: 840px;
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 40px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    background-color:  rgba(23, 27, 34, 0.842);
+    padding:5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;    
+}
+
+.grid div {
+    height: 70px;
+    width: 70px;
+    background-color: rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 4px rgba(10, 11, 14, 0.5);
+    cursor: url('Icons/Cursor.png'), auto;
+}
+
+.btn-section {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+
+.start-btn, .additional-btn, .end-timer-btn{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #6c6d70;  
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow:  4px 4px 0px 1px rgb(10, 15, 20);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.additional-btn{
+    font-weight: normal;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.start-btn:hover, .additional-btn:hover, .end-timer-btn:hover {
+    background-color: #6a8fb4;
+    color:#8f0f0f;
+    cursor: url('Icons/Cursor.png'), auto;
+}
+.start-btn:active, .additional-btn:active, .end-timer-btn:active {
+    box-shadow: 0.2px 1px 0px 1px rgb(31, 24, 10);
+    transform: translateY(4px);
+}
+
+.additional-btn:disabled, .start-timer-btn:disabled, .start-btn:disabled, .end-timer-btn:disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.end-timer-btn {
+    display: none;
+    color:#d60202;
+}
+
+.sound-control{
+    display: flex;
+    flex-direction: column;
+    font-family: 'IM Fell English SC', serif;
+    align-items: center;
+}
+
+.sound-control p {
+    font-size: 1rem;
+    align-items: center;
+    margin: 0.3px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: #6c6d7096;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 15px;
+    left: 5px;
+    bottom: 4px;
+    border-radius: 5px;
+    background-color: rgb(253, 253, 253);
+    -webkit-transition: .3s;
+    transition: .3s;    
+}
+
+input:checked + .slider {
+    background-color: #435c75;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(33px);
+    -ms-transform: translateX(33px);
+    transform: translateX(33px);
+}
+
+.score-board, .timer-display{    
+    font-family: 'IM Fell English SC', serif;
+    font-size: 1.2rem; 
+    border-radius: 5px;
+    display: flex;
+    margin-left: 20px;
+    max-width: 450px;
+    min-width:100px;
+    max-height: 80px;
+    padding-top:10px;
+    margin-top:20px;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    background-color: #0000008e;
+    color: #e7e7e7d5;
+}
+
+
+.timer-display {
+    display: none;
+}
+
+.score-board em {
+    font-style: normal;
+    font-size: 3rem; 
+}
+.score {
+    color: #cf2203;
+    font-size: 2rem; 
+    text-shadow: none;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+    width: 60px;
+    height: 35px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.tooltip .tooltiptext {
+    font-family: 'Varela Round';
+    font-size: small;
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip i {
+    cursor:help;
+    color: rgba(0, 0, 0, 0.623);
+}
+
+.tooltip:hover i  {
+    color: black
+}
+
+.help-btn {
+    position: relative;
+    display: inline-block;
+    font-family: 'IM Fell English SC', serif;
+    color: rgba(245, 245, 245, 0.521);
+    font-weight: normal;
+    margin-left: 185px;   
+    border: 2px;
+    padding: 5px;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.521);
+    border-radius: 5px;
+    cursor: help;
+}
+
+.help-text {
+    background-color: rgba(0, 0, 0, 0.459);
+    color: rgba(245, 245, 245, 0.877);
+    font-size: 15px;
+    font-family: 'Varela Round';
+    border-radius: 5px;
+    border: 2px;
+    padding: 10px;
+    text-align: justify;
+    visibility: hidden;    
+    position: absolute;
+    right: 50%;
+    width: 200px;
+}
+
+.help-btn:hover {
+    background-color: #435c75;
+    color: #8f0f0f;
+}
+.help-btn:hover .help-text {
+    visibility: visible;
+}
+
+
