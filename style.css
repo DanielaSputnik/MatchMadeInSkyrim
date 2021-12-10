@@ -5,7 +5,7 @@
 
 
 body {
-    background-image: url('Icons/Skyrim-bckgrnd.jpg');
+    background-image: url('Resources/Skyrim-bckgrnd.jpg');
     background-size: cover;
     background-color:rgb(91, 106, 107);
 }
@@ -51,7 +51,7 @@ body {
     width: 70px;
     background-color: rgba(0, 0, 0, 0.26);
     box-shadow: 0 2px 4px rgba(10, 11, 14, 0.5);
-    cursor: url('Icons/Cursor.png'), auto;
+    cursor: url('Resources/Cursor.png'), auto;
 }
 
 .btn-section {
@@ -96,7 +96,7 @@ body {
 .start-btn:hover, .additional-btn:hover, .end-timer-btn:hover {
     background-color: #6a8fb4;
     color:#8f0f0f;
-    cursor: url('Icons/Cursor.png'), auto;
+    cursor: url('Resources/Cursor.png'), auto;
 }
 .start-btn:active, .additional-btn:active, .end-timer-btn:active {
     box-shadow: 0.2px 1px 0px 1px rgb(31, 24, 10);
